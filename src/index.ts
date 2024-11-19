@@ -17,7 +17,7 @@ const { createUser, updateUser } = userModule;
 
 const user = createUser('ნინო', 26, 'რუსთავი');
 console.log('რეგისტრირებული მომხმარებელი:', user);
-// განახლებული მომხმარებელი: { user: 'ნინო', updates: { age: 27, city: 'თბილისი' } }
+// რეგისტრირებული მომხმარებელი: { name: 'ნინო', age: 26, city: 'რუსთავი' }
 
 const updatedUser = updateUser(user.name, { age: 27, city: 'თბილისი' });
 console.log('განახლებული მომხმარებელი:', updatedUser);
