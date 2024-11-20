@@ -1,10 +1,22 @@
-export function createUser(name: string, age: number, city: string) {
-  return { name, age, city };
+// დინამიური იმპორტი. index.js იქნება ფაილი, რომელსაც იმპორტირებისთვის გამოვიყენებთ
+const moduleName = './index.js'; 
+
+async function moduleFromUsersPage() {
+    try {
+        // import ასინქრონული ფუნქციაა. ფუნქცია უნდა დაელოდოს რომ ფაილი ჩაიტვირთოს და მოდული მიიღოს
+        const importedModule = await import(moduleName);
+        
+        // იმპორტირებული ფუნქციების გამოძახება, როგორიცაა user და newUser
+        importedModule.user();
+        importedModule.newUser('გვანცა');
+        
+        //  თუ რაიმე შეცდომა მოხდება try ბლოკის შესრულებისას, 
+        //  ავტომატურად გადავა catch ბლოკზე და გამოიტანს error-ს
+      } catch (error) {
+        console.error('შეცდომა მოდულის იმპორტისას:', error);
+      }
 }
 
-export function updateUser(
-  user: { name: string; },
-  updates: { name: string; age: number; city: string }
-) {
-  return { user, updates };
-}
+moduleFromUsersPage();
+// დარეგისტრირებული მომხმარებელი:  ნინო
+// ახალი მომხმარებელი:  გვანცა

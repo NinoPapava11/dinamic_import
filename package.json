@@ -1,10 +1,10 @@
 {
-  "name": "dynamic-require",
+  "name": "dynamic-import", 
   "version": "1.0.0",
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
-    "build": "tsc",
-    "start": "node dist/index.js"
+    "build": "npx tsc",
+    "start": "npm run build && node dist/user.js"
   },
   "devDependencies": {
     "@types/node": "^22.9.0",
@@ -13,5 +13,5 @@
   "private": true,
   "keywords": [],
   "author": "Nino Papava",
-  "description": "დინამიური require"
+  "description": "დინამიური იმპორტი"
 }
